@@ -5,13 +5,13 @@ class Vendedor:
         self.__nombre =  nombre
         self.__ventas = ventas
     # Creamos el metodo getter
-    def getVentasDelUsuario(self) -> None:
+    def getVentasDelUsuario(self) -> list[float]:
         return self.__ventas
     def setVentas(self, indice: int, valor: float) -> None:
         # Nos ubicamos en el indice que nos proporcionaron dentro de la lista y colocamos el valor entregado
         self.__ventas[indice] = valor
     # Un setter comun y corriente
-    def setNombre(self, n: str):
+    def setNombre(self, n: str) -> None:
         self.__nombre =  n
     # Recorremos la lista e imprimos cada valor
     def imprimeVentasAnuales(self) -> None:
