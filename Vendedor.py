@@ -5,27 +5,24 @@ class Vendedor:
         self.__nombre =  nombre
         self.__ventas = ventas
     # Creamos el metodo getter
-    def getVentasDelUsuario(self) -> list[float]:
+    def getVentasDelUsuario(self) -> None:
         return self.__ventas
     def setVentas(self, indice: int, valor: float) -> None:
         # Nos ubicamos en el indice que nos proporcionaron dentro de la lista y colocamos el valor entregado
         self.__ventas[indice] = valor
     # Un setter comun y corriente
-    def setNombre(self, n: str) -> None:
+    def setNombre(self, n: str):
         self.__nombre =  n
     # Recorremos la lista e imprimos cada valor
     def imprimeVentasAnuales(self) -> None:
-        for venta in self.__ventas:
+        for venta in self._ventas:
             print(venta)
-    # Recorremos la lista de ventas y vamos sumando cada valor a una variable contadora, despues se imprime la variable.
+    # Retornamos la suma de la lista ventas
     def totalVentasAnuales(self) -> float: 
-        aux = 0.0
-        for venta in self.__ventas:
-            aux += venta
-        return aux
+        return sum(self.__ventas)
 
 vendedores = [] # Utilizamos esta lista para guardar los objetos que crearemos a continuacion
-# Utilizamos un bucle while ya que es el usuario el que decide en que momento detener el programa
+# Utilizamos un bucle while ya que es el usuario es el que decide en que momento detener el programa
 while True:
     nombre = input('Nombre del vendedor: ')
     # Creamos un generador para facilitar la recoleccion de datos de venta anual
@@ -38,4 +35,4 @@ while True:
 valor_acumulado = 0.0
 for vendedor in vendedores:
     valor_acumulado += vendedor.totalVentasAnuales()
-print(f'Ventas totales durante la ejecucion del programa: ${valor_acumulado} ')
+print(f'Ventas totales durante la ejecucion del programa: ${valor_acumulado}')
