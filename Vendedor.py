@@ -24,12 +24,12 @@ class Vendedor:
             aux += venta
         return aux
 
-vendedores = [] # Creamos esta lista para guardar los objetos que crearemos a continuacion
-# Utilizamos un bucle while ya que es el usuario el que decide en que momento detener el programa
+vendedores = [] # Utilizamos esta lista para guardar los objetos que crearemos a continuacion
+# Utilizamos un bucle while ya que es el usuario es el que decide en que momento detener el programa
 while True:
     nombre = input('Nombre del vendedor: ')
     # Creamos un generador para facilitar la recoleccion de datos de venta anual
-    ventas = [float(input(f'Valor de venta del mes {i+1}: ')) for i in range(12)] # El numero dentro del range es la cantidad de peticiones, en este caso el numero de meses en un año
+    ventas = [float(input(f'Valor de venta del mes {i+1}: ')) for i in range(2)] # El numero dentro del range es la cantidad de peticiones, en este caso el numero de meses en un año
     vendedor = Vendedor(nombre, ventas) # El objeto de clase Vendedor
     vendedores.append(vendedor)
     decicion = int(input('Desea continuar el programa? Si(1) No(0)\n> '))
@@ -38,4 +38,4 @@ while True:
 valor_acumulado = 0.0
 for vendedor in vendedores:
     valor_acumulado += vendedor.totalVentasAnuales()
-print(f'Ventas totales durante la ejecucion del programa: ${valor_acumulado}')
+print(f'Ventas totales durante la ejecucion del programa: ${valor_acumulado} ')
