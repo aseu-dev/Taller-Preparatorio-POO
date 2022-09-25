@@ -1,7 +1,7 @@
 # Creamos la clase Vendedor
 class Vendedor:
     # Creamos el constructor
-    def __init__(self, nombre: str, *ventas ) -> None: 
+    def __init__(self, nombre: str, ventas: list[float]) -> None: 
         self.__nombre =  nombre
         self.__ventas = ventas
     # Creamos el metodo getter
@@ -20,10 +20,8 @@ class Vendedor:
     # Recorremos la lista de ventas y vamos sumando cada valor a una variable contadora, dspues se imprime la variable.
     def totalVentasAnuales(self) -> float: 
         aux = 0.0
-        # Un parametro *args mete todos los valores en una tupla, si se la pasa una lista, esta va a conservar su propiedad de lista, por lo que si se quiere acceder a ella se debera hacer con un for anidado
         for venta in self.__ventas:
-            for j in venta:
-                    aux += j
+            aux += venta
         return aux
 
 vendedores = [] # Creamos esta lista para guardar los objetos que crearemos a continuacion
@@ -40,4 +38,4 @@ while True:
 valor_acumulado = 0.0
 for vendedor in vendedores:
     valor_acumulado += vendedor.totalVentasAnuales()
-print(f'Ventas totales durante la ejecucion del programa: ${valor_acumulado} ')
+print(f'Ventas totales durante la ejecucion del programa: ${valor_acumulado}')
