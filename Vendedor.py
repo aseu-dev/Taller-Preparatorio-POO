@@ -17,7 +17,7 @@ class Vendedor:
     def imprimeVentasAnuales(self) -> None:
         for venta in self.__ventas:
             print(venta)
-    # Recorremos la lista de ventas y vamos sumando cada valor a una variable contadora, dspues se imprime la variable.
+    # Recorremos la lista de ventas y vamos sumando cada valor a una variable contadora, despues se imprime la variable.
     def totalVentasAnuales(self) -> float: 
         aux = 0.0
         for venta in self.__ventas:
@@ -25,7 +25,7 @@ class Vendedor:
         return aux
 
 vendedores = [] # Utilizamos esta lista para guardar los objetos que crearemos a continuacion
-# Utilizamos un bucle while ya que es el usuario es el que decide en que momento detener el programa
+# Utilizamos un bucle while ya que es el usuario el que decide en que momento detener el programa
 while True:
     nombre = input('Nombre del vendedor: ')
     # Creamos un generador para facilitar la recoleccion de datos de venta anual
