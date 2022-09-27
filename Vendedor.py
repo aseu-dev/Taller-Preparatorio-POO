@@ -14,9 +14,21 @@ class Vendedor:
     def setNombre(self, n: str):
         self.__nombre =  n
     # Recorremos la lista e imprimos cada valor
-    def imprimeVentasAnuales(self) -> None:
-        for venta in self._ventas:
-            print(venta)
+    def __str__(self) -> str:
+        return f"""
+        Enero: {self.__ventas[0]}
+        Febrero: {self.__ventas[1]}
+        Marzo: {self.__ventas[2]}
+        Mayo: {self.__ventas[3]}
+        Abril: {self.__ventas[4]}
+        Junio: {self.__ventas[5]}
+        Julio: {self.__ventas[6]}
+        Agosto: {self.__ventas[7]}
+        Septiembre: {self.__ventas[8]}
+        Octubre: {self.__ventas[9]}
+        Noviembre: {self.__ventas[10]}
+        Diciembre: {self.__ventas[11]}
+        """
     # Retornamos la suma de la lista ventas
     def totalVentasAnuales(self) -> float: 
         return sum(self.__ventas)
