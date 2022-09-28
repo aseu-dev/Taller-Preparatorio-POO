@@ -81,20 +81,29 @@ class Empleado(Persona, Tiempo):
     def __str__(self) -> str:
         return f'Hora de entrada {self.__horaEntrada}, hora de salida {self.__horaSalida}'
     ## 
-    def capturar():
-        pass
+    def capturar(self, *vendedores):
+        self.__capturarVendedores = vendedores
+
+# Una funcin estetica para imprimir formato 24: (12:9) -> (12:09) 
+def x(hora: list[int]) -> str:
+    hora = list[0] if len(str(list[0])) == 2 else f'0{list[0]}'
+    minutos = list[1] if len(str([list[1]])) == 2 else f'0{list[1]}'
+    return f'{hora}:{minutos}'
+
+# Formato Hora / Minuto / Segundo
+entradaEstipulada = [7,00,00]  
+salidaEstipulada = [17,00,00]
 
 palabrasTiempo, palabraGenero = ['hora', 'minuto',], ['la', 'el']
 entradaTrabajador = [int(input(f'Ingrese {palabraGenero[i]} {palabrasTiempo[i]} de entrada: ')) for i in range(len(palabrasTiempo))]
 salidaTrabajador = [int(input(f'Ingrese {palabraGenero[i]} {palabrasTiempo[i]} de salida: ')) for i in range(len(palabrasTiempo))] 
-entradaEstipulada = [7,00,00] # Formato Hora / Minuto / Segundo 
-salidaEstipulada = [17,00,00]
 empleado = Empleado(entradaTrabajador, salidaTrabajador)
 horaTemprano = True if entradaTrabajador[0] - entradaEstipulada[0] < 0 else False
 horaPuntual = True if entradaTrabajador[0] - entradaEstipulada[0] == 0 and entradaTrabajador[1] - entradaEstipulada[1] == 0 else False
 horaTarde = True if entradaTrabajador[0] - entradaEstipulada[0] > 0 else False
 operacion = (entradaEstipulada[0] - entradaTrabajador[0]) + (salidaTrabajador[0] - salidaEstipulada[0])
 horaExtra = True if operacion > 0 else False
+print(f'Hora de entrada estipulada: {x(entradaEstipulada)}\nHora de salida estipulada: {x(salidaEstipulada)} ')
 
 if horaTemprano:
     print('Llego temprano')
