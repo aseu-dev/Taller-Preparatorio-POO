@@ -80,7 +80,7 @@ class Empleado(Persona, Tiempo):
     # Metodo magico __str__
     def __str__(self) -> str:
         return f'Hora de entrada {self.__horaEntrada}, hora de salida {self.__horaSalida}'
-    ## 
+    # Capturamos objetos externos al propio objeto y los integramos en forma de tupla
     def capturar(self, *vendedores):
         self.__capturarVendedores = vendedores
 
